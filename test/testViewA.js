@@ -1,32 +1,31 @@
 /*jshint multistr: true */
 var expect = require('chai').expect;
 var requirejs = require("../requireJsConf");
-var jsdom = require("jsdom");
 
-describe('ViewATest', function() {
-  var ViewA, sut;
+describe('ViewATest', function () {
+  var sut, _, ViewA;
 
   var template = '\
       <input name="name" />\
-      <input name="description" />'
-    ;
+      <input name="description" />';
 
-  before(function(done){
-    jsdom.env('<html><body><form id="ViewA">' + template + '</form></body></html>',function(err, window) {
-        global.window = window;
-
-        requirejs(['src/ViewA'], function(viewA) {
-          ViewA = viewA;
-          sut = new ViewA({
-            el: "#ViewA"
-          });
-          sut.$el.html(template);
-          done();
-        });
-      });
+  before(function (done) {
+    requirejs(['underscore', 'src/ViewA'], function (underscore, viewA) {
+      _ = underscore;
+      ViewA = viewA;
+      done();
+    });
   });
 
-  it('loads the element', function() {
+  beforeEach(function () {
+    sut = new ViewA({
+      template: _.template(template),
+      el: '#sut'
+    });
+  });
+
+  it('loads the element', function () {
     expect(sut.$el.html()).not.to.be.empty;
+    expect(sut.$('input[name="name"]').val()).to.be.equal('testA');
   });
 });

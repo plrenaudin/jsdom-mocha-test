@@ -8,7 +8,7 @@ define(['backbone'], function(Backbone) {
     },
 
     render: function() {
-      this.$('name').val('testB');
+      this.$('input[name="name"]').val('testB');
       return this;
     }
   });

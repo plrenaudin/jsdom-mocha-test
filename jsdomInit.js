@@ -1,0 +1,1 @@
+module.exports = require('jsdomify').default.create('<html><body><div id="sut"></div></body></html>');

@@ -6,9 +6,9 @@
   "scripts": {
     "test": "mocha"
   },
-  "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/plrenaudin/jsdom-mocha-test.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plrenaudin/jsdom-mocha-test.git"
   },
   "author": "plrenaudin",
   "license": "MIT",
@@ -17,6 +17,7 @@
     "chai": "^3.5.0",
     "jquery": "^2.2.3",
     "jsdom": "^8.3.1",
+    "jsdomify": "^2.1.0",
     "mocha": "^2.4.5",
     "requirejs": "^2.2.0",
     "underscore": "^1.8.3"
