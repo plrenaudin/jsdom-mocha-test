@@ -4,7 +4,7 @@
   "description": "Sample project showing backbone view test issues with jsdom and mocha",
   "main": "mocha",
   "scripts": {
-    "test": "mocha -r jsdomInit.js
+    "test": "mocha -r jsdomInit.js"
   },
   "repository": {
     "type": "git",
