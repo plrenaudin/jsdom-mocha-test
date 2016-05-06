@@ -1,14 +1,16 @@
-define(['backbone'], function(Backbone) {
+define(['backbone', 'underscore'], function(Backbone, _) {
   'use strict';
 
   return Backbone.View.extend({
+    template: _.template('<input name="name" /><input name="description" />'),
 
     initialize: function() {
       this.render();
     },
 
     render: function() {
-      this.$('name').val('testB');
+      this.$el.html(this.template());
+      this.$('input[name="name"]').val('testB');
       return this;
     }
   });
